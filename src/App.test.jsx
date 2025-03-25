@@ -8,6 +8,6 @@ describe("App Component", () => {
         render(<App />);
         
         
-        expect(screen.getByText("Click on the Vite")).toBeInTheDocument();
+        expect(screen.getByText("Click on the Vite")).toBeDefined();
     });
 })
