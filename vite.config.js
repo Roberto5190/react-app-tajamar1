@@ -1,17 +1,14 @@
 import { defineConfig } from 'vite';
-import {viteStaticCopy} from 'vite-plugin-static-copy';
+import react from "@vitejs/plugin-react-swc"
 
 
 export default defineConfig({
-  plugins: [
-    react(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'public/assets/*',
-          dest: 'dist/assets/',
-        },
-      ],
-    }),
-  ],
+  plugins: [react()],
+  test: {
+    globals: true, 
+    enviroment: "jsdom",
+    coverage: {
+      reporter: ["text", "json", "html"]
+    }
+  }
 });
